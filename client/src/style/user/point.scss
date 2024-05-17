@@ -1,0 +1,302 @@
+.pointContent {
+	flex-wrap: nowrap;
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 440px;
+	margin-bottom: 8rem;
+}
+.pointContainer {
+	display: flex;
+	padding-top: 80px;
+	width: 100%;
+	gap: 12px;
+}
+
+.point, .coupon {
+	position: relative;
+	width: 100%;
+	height: 100%;
+    line-height: 200%;
+	
+	h1 {
+		display: flex;
+		font-size: 21px;
+		font-weight: 500;
+		margin: 0 0 1rem 0;
+	}
+	.boxContainer{
+		display: block;
+		border: 1px solid #C1C1C1;
+		background-color: white;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  		border: 1px solid #ebebeb;
+		border-radius: 10px;
+		padding: 0 1rem;
+		margin-bottom: 1rem;
+		line-height: 140%;
+	
+		.pointField, .couponField {
+			display: block;
+			justify-content:space-between;
+			align-items: center;
+			width: 100%;
+			padding: 16px;
+			
+			.pointImage{
+				display: flex;
+				align-items: center;
+				height: 150px;
+				width: 150px;
+				border: 1px solid #cccccc;
+				background-color: #f5f5f5;
+				border-radius: 1.4rem;
+				.image{
+					height: 50%;
+					width: 100%;
+				}
+			}
+			.point, .coupon {
+				display: flex;
+				justify-content: space-between;
+				padding: 2rem;
+				align-items: center;
+
+				.pointStatus, .couponName{
+					display: flex;
+					flex-direction: column;
+				span {
+					font-size: 1.2rem;
+					padding: 1rem 0;
+				}
+				h1 {
+					font-size: 2rem;
+					color: #9b9b9b;
+				}
+			}
+			}
+			.buttons{
+				display: flex;
+				height: 100%;
+				border: none;
+				border-radius:1px;
+				padding: 2rem;
+			}
+			
+			.checkPoint {
+				display: flex;
+				justify-content:space-between;
+				padding: 1rem;
+			}
+			}
+			.panel-checkPoint, .panel-coupon{
+				overflow: hidden; 
+				height: 0;
+				transition:all 0.2s;
+			}
+			.dropdown{
+				padding: 1rem;
+				display: block;
+				height: auto;
+			}
+		}
+	}
+
+.card-modal-open-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	cursor: pointer;
+	color: #c1c1c1;
+	width: 100%;
+	height: 4.5rem;
+	margin: 0;
+	padding: 1rem;
+	border: 1px solid #c1c1c1;
+	border-radius: var(--rounded-normal);
+	line-height: 140%;
+	font-size: 1.1rem;
+	font-weight: 400;
+	
+		&:hover{
+			background-color: #f3f3f3;
+			color: #a3a3a3;
+		}
+	}
+.card-modal-open-button{
+	cursor: pointer;
+	background-color: #000000;
+	width: 24rem;
+	height: 4rem;
+}
+.card-modal-close-btn {
+	border: 1px solid #c1c1c1;
+	border-radius: var(--rounded-normal);
+	height: 3rem;
+	background-color: #fff;
+	color: #9b9b9b;
+	text-decoration: underline;
+}
+.card-modal-container {
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.card-modal-content {
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	background-color: #ffffff;
+	width:auto;
+	height: auto;
+	padding: 2rem;
+	border-radius: 1rem;
+}
+.data{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.card-modal-inner-boxContainer {
+		display: flex;
+		justify-content: space-between;
+		height: 45%;
+		border: 1px solid #C1C1C1;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		border-radius: 10px;
+		padding: 2rem;
+		margin-bottom: 1rem;
+	}
+}
+.card-modal-content-button {
+	cursor: pointer;
+	background-color: #A40000;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 400;
+	border: none;
+	border-radius: 0.6rem;
+	width: 24rem;
+	height: 4rem;
+	margin-top: 1rem;
+
+}
+.card-modal-boxContainer {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #C1C1C1;
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+	border-radius: 10px;
+	padding: 2rem;
+}
+.cardGame {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	height: auto;
+	.cardGame-innerContainer{
+		display: flex;
+		box-sizing: border-box;  
+	}
+	.cardWrapper {
+		background-color: transparent;
+		width: 16rem;
+		height: 12rem;
+		margin: 0.2rem;
+		position: flex;
+		perspective: 1000px;
+		transition: transform 0.6s ease;
+		transform-style: preserve-3d;
+	}
+	.flipped .card{
+		transform-style: preserve-3d;
+		transform: rotateY(180deg);
+	}
+	.card {
+		cursor: pointer;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transition: all 0.3s;
+		border-radius: 20px;
+		perspective-origin: center;
+		transform-style: preserve-3d;
+		color: white;
+		font-size: 2rem;
+	}
+}
+.cardWrapper .card .front:hover {
+	transform: rotateY(-20deg);
+	transform-style: preserve-3d;
+	perspective-origin: center;
+	transition: all 0.2s;
+	box-shadow: 0 6px 8px -1px rgb(100 0 0 / 0.2), 0 2px 4px -2px rgb(100 0 0 / 0.2);
+}
+
+.front, .back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+	.front {
+		background-color: #353535; /* 앞면의 배경색 */
+		color: rgb(255, 249, 249); /* 앞면의 텍스트 색상 */
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		backface-visibility: hidden;
+		box-shadow: 0 6px 8px -1px rgba(100, 0, 0, 0.1), 0 2px 4px -2px rgb(100 0 0 / 0.1);
+		.logo{
+			scale: 1.7;
+		}
+	}
+	
+	.card .back {
+		transform: rotateY(180deg);
+		background-color: #fff;
+		color: #A40000;
+		border: 1px solid #A40000;
+		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		backface-visibility: hidden;
+		box-shadow: 0 6px 8px -1px rgba(100, 0, 0, 0.1), 0 2px 4px -2px rgb(100 0 0 / 0.1);
+	}
+
+.card-controll{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	
+	.chance {
+		display: flex;
+		margin-right: 2rem;
+	}
+	.retry {
+		display: flex;
+		padding: 1rem;
+		border: 1px solid #c1c1c1;
+		border-radius: var(--rounded-normal);
+		height: 3rem;
+		background-color: #fff;
+		color: #9b9b9b;
+		svg{
+			margin-right: 0.4rem;
+			font-size: 1rem;
+		}
+	}
+}
