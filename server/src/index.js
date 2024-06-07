@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 const authRouter = require("./routes/auth");
-const communityRouter = require('./routes/community');
-const userRouter = require('./routes/user');
-const groupRouter = require('./routes/group');
-const ptRouter = require('./routes/pt');
+const communityRouter = require("./routes/community");
+const userRouter = require("./routes/user");
+const groupRouter = require("./routes/group");
+const ptRouter = require("./routes/pt");
 
 const PORT = 3000;
 
@@ -23,12 +23,23 @@ mongoose
   .then(() => console.log(`MongoDB is connected`))
   .catch((err) => console.error(err));
 
+app.get("/", async (req, res) => {
+  try {
+    res.json({
+      status: 200,
+      message: "server is running successfully",
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send("Server error");
+  }
+});
 
 app.use("/api/auth", authRouter);
-app.use('/api/community', communityRouter);
-app.use('/api/user', userRouter);
-app.use('/api/group', groupRouter);
-app.use('/api/pt', ptRouter);
+app.use("/api/community", communityRouter);
+app.use("/api/user", userRouter);
+app.use("/api/group", groupRouter);
+app.use("/api/pt", ptRouter);
 
 // 서버 에러 처리
 app.use((err, req, res, next) => {
