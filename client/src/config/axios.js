@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.PROD ? "" : "http://localhost:3000",
+  baseURL: "https://hot-body-api.vercel.app",
 });
 
 axiosInstance.interceptors.request.use(
