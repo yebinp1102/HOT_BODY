@@ -26,7 +26,7 @@ export const signIn = async (userInfo) => {
   try {
     const response = await axios.post("/api/auth/signin", userInfo);
     if(response.status == 200){
-      localStorage.setItem("accessToken", response.data.accessToken);
+      sessionStorage.setItem("accessToken", response.data.accessToken);
       return response;
     }
   } catch (err) {

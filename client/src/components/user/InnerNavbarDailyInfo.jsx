@@ -8,7 +8,7 @@ const InnerNavbarDailyInfo = ({ value, setState }) => {
     const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
     useEffect(() => {
-        const lastChecked = localStorage.getItem('lastCheckedDate');
+        const lastChecked = sessionStorage.getItem('lastCheckedDate');
         const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD 형식
 
         if (!lastChecked || lastChecked !== today) {
@@ -18,7 +18,7 @@ const InnerNavbarDailyInfo = ({ value, setState }) => {
 
     const handleCheckIn = () => {
         const today = new Date().toISOString().slice(0, 10); // 오늘 날짜 저장
-        localStorage.setItem('lastCheckedDate', today);
+        sessionStorage.setItem('lastCheckedDate', today);
         setIsButtonEnabled(false); // 버튼 비활성화
         setPoint(+5);
         toast.info('출석체크 완료! +5p');

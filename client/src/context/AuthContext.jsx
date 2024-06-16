@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const cookie = localStorage.getItem("accessToken");
+    const cookie = sessionStorage.getItem("accessToken");
     if(cookie) checkAuthUser();
   }, []);
 

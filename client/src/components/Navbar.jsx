@@ -34,7 +34,7 @@ const Navbar = () => {
   const handleLogout = () => {
     setUser({});
     setIsAuthenticated(false);
-    localStorage.removeItem("accessToken");
+    sessionStorage.removeItem("accessToken");
     navigate('/');
     toast.info('로그아웃 되었습니다.');
   };

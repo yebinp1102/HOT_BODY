@@ -6,7 +6,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   function (config) {
-    config.headers.Authorization = `Bearer ${localStorage.getItem(
+    config.headers.Authorization = `Bearer ${sessionStorage.getItem(
       "accessToken"
     )}`;
     return config;
@@ -23,7 +23,7 @@ axiosInstance.interceptors.response.use(
   },
   function (err) {
     if (err.response && err.response.data === "jwt expired") {
-      localStorage.removeItem("accessToken");
+      sessionStorage.removeItem("accessToken");
       window.location.reload();
     }
     return Promise.reject(err);
